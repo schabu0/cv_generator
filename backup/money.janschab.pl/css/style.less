@@ -1,0 +1,178 @@
+@border: 2px solid #80807C;
+
+body {
+    margin: 0;
+    background-color: #30302f;
+    color: #F1f1f1;
+    font-family: 'Roboto';
+    font-size: 21px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*::-moz-selection {
+    background-color: orange;
+    color: #fff;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    padding: 0;
+    margin: 13px 8px 8px 8px;
+}
+
+input {
+    background: rgba(0,0,0,0);
+    border: none;
+    display: block;
+    width: 285px;
+    font-size: 21px;
+    color: #fff;
+    border-left: @border;
+    border-bottom: @border;
+    margin: 8px;
+    padding-left: 8px;
+}
+
+label.checkbox {
+    position: relative;
+}
+label.checkbox input[type="checkbox"] {display:none;}
+label.checkbox span {
+  display: inline-block;
+  border: none;
+  width: 21px;
+  height: 21px;
+  border-radius: 3px;
+  background: #30302f;
+  vertical-align: middle;
+  margin: 10px;
+  position: relative;
+  transition: width 0.1s, height 0.1s, margin 0.1s;
+}
+
+label.checkbox :checked + span {
+  background: #58EC24;
+}
+
+label.checkbox :checked + span:after {
+  content: '';
+}
+
+button {
+    background-color: #80807C;
+    border: none;
+    font-size: 21px;
+    width: 288px;
+    margin-left: 8px;
+    vertical-align: middle;
+    padding: 21px 13px;
+    color: #FFF;
+}
+
+#warning {
+    width: 300px;
+    background-color: yellow;
+    color: #30302f;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    transform: translateY(-100%);
+    position: fixed;
+    z-index: 9999999;
+    top: 0;
+    left: calc( ~" 50% - 150px " );
+    transition-duration: .3s;
+    padding: 21px;
+    text-align: center;
+}
+
+#warning.open {
+    transform: translateY(0);
+}
+
+
+
+#app {
+
+
+    .box {
+        vertical-align: top;
+        width: 304px;
+        margin: 8px 0 0 8px;
+        padding-bottom: 8px;
+        background-color: #4F4F4D;
+        display: inline-block;
+
+        &.output {
+
+            p {
+                display: inline-block;
+                margin: 0;
+                padding: 8px;
+                margin-left: 13px;
+            }
+        }
+
+        .item {
+            width: 288px;
+            margin: 8px 0 0 8px;
+            background-color: #595957;
+            position: relative;
+            overflow: hidden;
+
+            p {
+                margin: 0;
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                width: 280px;
+                padding: 13px;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    width: 21px;
+
+                    background: rgba(0,0,0,0);
+                    background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, #595957 100%);
+                    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, #595957));
+                    background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%, #595957 100%);
+                    background: -o-linear-gradient(left, rgba(0,0,0,0) 0%, #595957 100%);
+                    background: -ms-linear-gradient(left, rgba(0,0,0,0) 0%, #595957 100%);
+                    background: linear-gradient(to right, rgba(0,0,0,0) 0%, #595957 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#595957', GradientType=1 );
+
+                }
+            }
+
+            .button-check + p {
+                width: 236px;
+            }
+
+            .button-check {
+                background-color: #30302f;
+                width: 21px;
+                height: 21px;
+                border-radius: 3px;
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                cursor: pointer;
+                transition-duration: 0.3s;
+
+                &:hover {
+                    background-color: #000;
+                }
+            }  
+        }
+    }
+
+     
+}

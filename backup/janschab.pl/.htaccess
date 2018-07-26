@@ -1,0 +1,11 @@
+### PROTECT FILES ###
+<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+
+
+RewriteEngine on
+RewriteRule ^strona-glowna pages/main.php
+RewriteRule ^cv pages/cv.php
